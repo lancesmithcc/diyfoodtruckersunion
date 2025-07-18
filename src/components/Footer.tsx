@@ -25,11 +25,9 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-caprasimo mb-4">Quick Links</h3>
             <ul className="space-y-2 font-redhat text-gray-400">
-              <li><a href="#playlists" className="hover:text-white transition-colors duration-200">YouTube Playlists</a></li>
-              <li><a href="#featured-videos" className="hover:text-white transition-colors duration-200">Featured Videos</a></li>
-              <li><a href="#resources" className="hover:text-white transition-colors duration-200">Resources</a></li>
-              <li><a href="#calculator" className="hover:text-white transition-colors duration-200">Cost Calculator</a></li>
-              <li><a href="#discord" className="hover:text-white transition-colors duration-200">Discord Community</a></li>
+              <li><a href="/workbook/" className="hover:text-white transition-colors duration-200">DIY Workbook</a></li>
+              <li><a href="/resources/" className="hover:text-white transition-colors duration-200">Resources</a></li>
+              <li><a href="https://discord.gg/4XNQJ879" className="hover:text-white transition-colors duration-200">Discord Community</a></li>
             </ul>
           </div>
 
@@ -40,14 +38,6 @@ const Footer: React.FC = () => {
               <li className="flex items-center">
                 <Mail size={16} className="mr-2" />
                 <span>hello@diyfoodtruckersunion.com</span>
-              </li>
-              <li className="flex items-center">
-                <Youtube size={16} className="mr-2" />
-                <span>@diyfoodtruckersunion</span>
-              </li>
-              <li className="flex items-center">
-                <MapPin size={16} className="mr-2" />
-                <span>Online Community</span>
               </li>
             </ul>
           </div>
