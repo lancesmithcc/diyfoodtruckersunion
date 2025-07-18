@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Globe, Square, Camera, Palette, BarChart3, Github, ExternalLink, Zap, Smartphone, Code } from 'lucide-react';
+import { Globe, Square, Camera, Palette, BarChart3, Github, ExternalLink, Zap, Smartphone, Code, MapPin, Calendar } from 'lucide-react';
 
 const ResourcesSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -35,6 +35,18 @@ const ResourcesSection: React.FC = () => {
       title: 'AI Menu Translation',
       description: 'Upload a photo of your menu and watch AI automatically translate it into a digital format that syncs with Square',
       color: 'bg-blue-500',
+    },
+    {
+      icon: MapPin,
+      title: 'Google Maps Integration',
+      description: 'Show your current location to customers with integrated Google Maps displaying your real-time position',
+      color: 'bg-red-500',
+    },
+    {
+      icon: Calendar,
+      title: 'Schedule Management',
+      description: 'Manage your weekly schedule with Open, Closed, or TBA status for each day to keep customers informed',
+      color: 'bg-cyan-500',
     },
     {
       icon: Square,
@@ -85,7 +97,11 @@ const ResourcesSection: React.FC = () => {
           <div className="bg-gradient-to-r from-primary-500 to-secondary-500 p-8 text-white">
             <div className="flex items-center mb-6">
               <div className="bg-white bg-opacity-20 p-4 rounded-lg mr-6">
-                <Smartphone className="h-12 w-12" />
+                <img 
+                  src="https://foodtruckdemo.s3.us-east-2.amazonaws.com/branding/logo-1752199357659-foodtruckboss.png" 
+                  alt="Food Truck Boss Logo" 
+                  className="h-12 w-12 object-contain"
+                />
               </div>
               <div>
                 <h3 className="text-3xl font-caprasimo mb-2">Food Truck Boss</h3>
