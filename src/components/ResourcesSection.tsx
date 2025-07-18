@@ -3,6 +3,9 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Globe, Square, Camera, Palette, BarChart3, Github, ExternalLink, Zap, Smartphone, Code, MapPin, Calendar } from 'lucide-react';
 
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
+
 const ResourcesSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -96,9 +99,9 @@ const ResourcesSection: React.FC = () => {
         <div className="resource-card bg-white rounded-lg shadow-xl overflow-hidden mb-16 max-w-6xl mx-auto">
           <div className="bg-gradient-to-r from-primary-500 to-secondary-500 p-8 text-white">
             <div className="flex items-center mb-6">
-              <img 
-                src="https://foodtruckdemo.s3.us-east-2.amazonaws.com/branding/logo-1752199357659-foodtruckboss.png" 
-                alt="Food Truck Boss Logo" 
+              <img
+                src="https://foodtruckdemo.s3.us-east-2.amazonaws.com/branding/logo-1752199357659-foodtruckboss.png"
+                alt="Food Truck Boss Logo"
                 className="h-20 w-20 object-contain mr-6"
               />
               <div>
@@ -123,7 +126,7 @@ const ResourcesSection: React.FC = () => {
                 <ExternalLink size={20} className="ml-2" />
               </a>
               <a
-                href="https://github.com/foodtruckboss"
+                href="https://github.com/lancesmithcc/foodtruck"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-primary-700 text-white px-8 py-4 rounded-lg font-redhat font-medium hover:bg-primary-800 transition-colors duration-200 flex items-center justify-center"
@@ -248,7 +251,7 @@ const ResourcesSection: React.FC = () => {
 
           <div className="mt-8 text-center">
             <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-6 mb-6">
-              <h4 className="font-caprasimo text-lg text-gray-800 mb-2">Start Smart, Not Expensive</h4>
+              <h4 className="font-caprasimo text-lg text-gray-800 mb-2">Start Smart</h4>
               <p className="font-redhat text-gray-600">
                 Get a professional website with advanced features without the monthly costs.
                 Perfect for food truck operators who want to start smart and scale efficiently.
@@ -256,7 +259,7 @@ const ResourcesSection: React.FC = () => {
             </div>
 
             <a
-              href="https://foodtruckboss.app/"
+              href="https://www.foodtruckboss.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-primary-500 text-white px-8 py-4 rounded-lg font-redhat font-bold hover:bg-primary-600 transition-colors duration-200 inline-flex items-center text-lg"
@@ -275,7 +278,14 @@ const ResourcesSection: React.FC = () => {
               Join our Discord community for support with Food Truck Boss setup, customization tips, and networking with other food truck operators.
             </p>
             <button className="bg-secondary-500 text-white px-8 py-3 rounded-lg font-redhat font-medium hover:bg-secondary-600 transition-colors duration-200">
-              Join Community
+              <a
+                href="https://discord.gg/4XNQJ879"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#5865F2] hover:bg-[#4752C4] text-white px-12 py-4 rounded-xl font-redhat font-semibold text-lg transition-all duration-200 transform hover:scale-105 inline-flex items-center gap-3 shadow-lg"
+              >
+                Join Community
+              </a>
             </button>
           </div>
         </div>
