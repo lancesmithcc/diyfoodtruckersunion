@@ -49,31 +49,45 @@ const Header: React.FC = () => {
       isScrolled ? 'bg-transparent' : 'bg-transparent'
     }`}>
       {/* Navigation Bar */}
-      <div className="bg-white px-4 py-4  border-t-[11px] border-t-orange-500">
+      <div className="bg-white px-4 py-4 border-t-[11px] border-t-orange-500">
         <div className="container mx-auto">
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex justify-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`text-gray-700 hover:text-primary-500 transition-colors duration-200 font-caprasimo font-medium text-lg ${
-                  location.pathname === item.href ? 'text-primary-500' : ''
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <Link to="/" className="flex-shrink-0">
+              <img 
+                src="/img/logo.svg" 
+                alt="DIY Food Truckers Union" 
+                className="h-12 w-auto" 
+              />
+            </Link>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex justify-center">
-            <button
-              className="p-2"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex space-x-8">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`text-gray-700 hover:text-primary-500 transition-colors duration-200 font-caprasimo font-medium text-lg ${
+                    location.pathname === item.href ? 'text-primary-500' : ''
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
+
+            {/* Mobile Menu Button */}
+            <div className="md:hidden">
+              <button
+                className="p-2"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
+
+            {/* Spacer for desktop to balance logo */}
+            <div className="hidden md:block w-12"></div>
           </div>
         </div>
       </div>

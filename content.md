@@ -94,7 +94,7 @@ To democratize food truck entrepreneurship by providing accessible, practical, a
 - Mentorship program
 
 ## Key Messages
-- "Start smart, not expensive"
+- "Start Smart"
 - "Community over competition"
 - "Real advice from real operators"
 - "Your food truck dream is achievable"
