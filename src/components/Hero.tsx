@@ -38,11 +38,11 @@ const Hero: React.FC = () => {
         </p>
 
         <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center mb-16">
-          <a href="#getting-started" className="bg-primary-500 text-white px-8 py-4 rounded-lg font-redhat font-semibold hover:bg-primary-600 transition-colors duration-200 flex items-center justify-center group">
+          <a href="/workbook/" className="bg-primary-500 text-white px-8 py-4 rounded-lg font-redhat font-semibold hover:bg-primary-600 transition-colors duration-200 flex items-center justify-center group">
             Get Started
             <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-200" size={20} />
           </a>
-          <a href="#discord" className="bg-white text-primary-500 px-8 py-4 rounded-lg font-redhat font-semibold border-2 border-primary-500 hover:bg-primary-50 transition-colors duration-200">
+          <a href="https://discord.gg/4XNQJ879" className="bg-white text-primary-500 px-8 py-4 rounded-lg font-redhat font-semibold border-2 border-primary-500 hover:bg-primary-50 transition-colors duration-200">
             Join Community
           </a>
         </div>
