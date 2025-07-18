@@ -96,13 +96,11 @@ const ResourcesSection: React.FC = () => {
         <div className="resource-card bg-white rounded-lg shadow-xl overflow-hidden mb-16 max-w-6xl mx-auto">
           <div className="bg-gradient-to-r from-primary-500 to-secondary-500 p-8 text-white">
             <div className="flex items-center mb-6">
-              <div className="bg-white bg-opacity-20 p-4 rounded-lg mr-6">
-                <img 
-                  src="https://foodtruckdemo.s3.us-east-2.amazonaws.com/branding/logo-1752199357659-foodtruckboss.png" 
-                  alt="Food Truck Boss Logo" 
-                  className="h-12 w-12 object-contain"
-                />
-              </div>
+              <img 
+                src="https://foodtruckdemo.s3.us-east-2.amazonaws.com/branding/logo-1752199357659-foodtruckboss.png" 
+                alt="Food Truck Boss Logo" 
+                className="h-20 w-20 object-contain mr-6"
+              />
               <div>
                 <h3 className="text-3xl font-caprasimo mb-2">Food Truck Boss</h3>
                 <p className="text-xl opacity-90">Professional Website System for Food Trucks</p>
