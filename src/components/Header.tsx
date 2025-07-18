@@ -114,7 +114,7 @@ export const LogoSection: React.FC = () => {
     <section className="bg-white py-8">
       <div className="container mx-auto px-4 text-center mt-[55px]">
         <img 
-          src="/src/img/logo.svg" 
+          src="/img/logo.svg" 
           alt="DIY Food Truckers Union" 
           className="h-60 w-auto mx-auto" 
         />

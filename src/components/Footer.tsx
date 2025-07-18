@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
           {/* Logo and Description */}
           <div className="md:col-span-2">
             <div className="mb-4">
-              <img src="/src/img/logo.svg" alt="DIY Food Truckers Union" className="h-12 w-auto" />
+              <img src="/img/logo.svg" alt="DIY Food Truckers Union" className="h-12 w-auto" />
             </div>
             <p className="font-redhat text-gray-400 mb-6 max-w-md">
               Teaching food truck entrepreneurs through comprehensive YouTube tutorials, free resources, and a supportive community to build successful mobile food businesses on a budget.
