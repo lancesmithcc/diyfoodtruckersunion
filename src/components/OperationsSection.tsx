@@ -42,7 +42,7 @@ const OperationsSection: React.FC = () => {
         'End-of-day closing procedures',
         'Equipment maintenance routines'
       ],
-      color: 'bg-blue-500',
+      color: 'bg-teal-500',
       timeImpact: 'Save 2-3 hours daily',
       lessonPath: '/operations/daily-workflows'
     },

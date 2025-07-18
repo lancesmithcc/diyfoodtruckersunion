@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Globe, Square, Camera, Palette, BarChart3, Github, ExternalLink, Zap, Smartphone, Code, MapPin, Calendar } from 'lucide-react';
+import { Globe, Square, Camera, Palette, BarChart3, ExternalLink, Zap, Code, MapPin, Calendar } from 'lucide-react';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -37,7 +37,7 @@ const ResourcesSection: React.FC = () => {
       icon: Camera,
       title: 'AI Menu Translation',
       description: 'Upload a photo of your menu and watch AI automatically translate it into a digital format that syncs with Square',
-      color: 'bg-blue-500',
+      color: 'bg-teal-500',
     },
     {
       icon: MapPin,
@@ -132,7 +132,7 @@ const ResourcesSection: React.FC = () => {
                 className="bg-primary-700 text-white px-8 py-4 rounded-lg font-redhat font-medium hover:bg-primary-800 transition-colors duration-200 flex items-center justify-center"
               >
                 View on GitHub
-                <Github size={20} className="ml-2" />
+                <ExternalLink size={20} className="ml-2" />
               </a>
             </div>
           </div>
@@ -225,7 +225,7 @@ const ResourcesSection: React.FC = () => {
 
             <div>
               <h4 className="font-caprasimo text-lg text-gray-800 mb-4 flex items-center">
-                <Github className="h-5 w-5 text-primary-500 mr-2" />
+                <Code className="h-5 w-5 text-primary-500 mr-2" />
                 Open Source Advantage
               </h4>
               <ul className="space-y-2 font-redhat text-gray-700">

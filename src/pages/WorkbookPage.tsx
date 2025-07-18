@@ -10,7 +10,7 @@ const WorkbookPage: React.FC = () => {
       title: 'Getting Started',
       description: 'Your complete roadmap to starting a food truck business on a budget. Follow our proven step-by-step process to turn your culinary dreams into reality.',
       icon: Target,
-      color: 'bg-blue-500',
+      color: 'bg-teal-500',
       href: '/getting-started',
       lessons: [
         'Business Planning & Market Research',

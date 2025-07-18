@@ -69,7 +69,7 @@ const MarketingGrowthSection: React.FC = () => {
         'Food truck rally organization',
         'Local business collaborations'
       ],
-      color: 'bg-blue-500',
+      color: 'bg-teal-500',
       roi: '40% revenue increase'
     },
     {

@@ -36,7 +36,7 @@ const GettingStartedSection: React.FC = () => {
       title: 'Business Planning & Market Research', 
       description: 'Learn how to identify your target market, analyze competition, and create a solid business plan that sets you up for success.',
       topics: ['Market Analysis', 'Competition Research', 'Business Model', 'SWOT Analysis'],
-      color: 'bg-blue-500',
+      color: 'bg-teal-500',
       lessonPath: '/getting-started/business-planning'
     },
     {

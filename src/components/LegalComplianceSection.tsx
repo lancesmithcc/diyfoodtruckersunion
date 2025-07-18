@@ -56,7 +56,7 @@ const LegalComplianceSection: React.FC = () => {
         'Local permits',
         'Reseller permits'
       ],
-      color: 'bg-blue-500',
+      color: 'bg-teal-500',
       urgency: 'High',
       timeframe: '1-3 weeks'
     },

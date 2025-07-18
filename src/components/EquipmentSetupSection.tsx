@@ -41,7 +41,7 @@ const EquipmentSetupSection: React.FC = () => {
         'Storage and parking requirements',
         'Licensing differences'
       ],
-      color: 'bg-blue-500',
+      color: 'bg-teal-500',
       budgetRange: '$15,000 - $80,000'
     },
     {

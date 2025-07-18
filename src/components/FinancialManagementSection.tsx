@@ -42,7 +42,7 @@ const FinancialManagementSection: React.FC = () => {
         'Receipt organization',
         'Monthly reconciliation'
       ],
-      color: 'bg-blue-500',
+      color: 'bg-teal-500',
       difficulty: 'Beginner',
       lessonPath: '/financial-management/bookkeeping-basics'
     },

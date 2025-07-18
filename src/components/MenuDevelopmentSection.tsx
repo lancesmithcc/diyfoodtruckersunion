@@ -69,7 +69,7 @@ const MenuDevelopmentSection: React.FC = () => {
         'Assembly line setup',
         'Quality maintenance'
       ],
-      color: 'bg-blue-500',
+      color: 'bg-teal-500',
       difficulty: 'Intermediate'
     },
     {
