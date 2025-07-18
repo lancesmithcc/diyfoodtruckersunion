@@ -12,22 +12,10 @@ const Footer: React.FC = () => {
               <img src="/img/logo.svg" alt="DIY Food Truckers Union" className="h-12 w-auto" />
             </div>
             <p className="font-redhat text-gray-400 mb-6 max-w-md">
-              Teaching food truck entrepreneurs through comprehensive YouTube tutorials, free resources, and a supportive community to build successful mobile food businesses on a budget.
+              DIY Food Truckers lifting up DIY Food Truckers since 2025.
             </p>
             <div className="flex space-x-4">
-              <a href="https://youtube.com/@diyfoodtruckersunion" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200">
-                <Youtube size={24} />
-              </a>
-              <a href="https://facebook.com/diyfoodtruckersunion" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200">
-                <Facebook size={24} />
-              </a>
-              <a href="https://twitter.com/diyfoodtruckers" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200">
-                <Twitter size={24} />
-              </a>
-              <a href="https://instagram.com/diyfoodtruckersunion" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200">
-                <Instagram size={24} />
-              </a>
-              <a href="https://discord.gg/diyfoodtruckers" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200">
+              <a href="https://discord.gg/4XNQJ879" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200">
                 <MessageCircle size={24} />
               </a>
             </div>
