@@ -30,26 +30,20 @@ const ResourcesSection: React.FC = () => {
       );
 
       // Animate FoodTruckBoss logo with fade and rotation
-      gsap.fromTo(
-        '.foodtruckboss-logo',
-        { 
-          opacity: 0, 
-          rotation: -180,
-          scale: 0.5
-        },
-        {
-          opacity: 1,
-          rotation: 0,
-          scale: 1,
-          duration: 1.2,
-          ease: 'back.out(1.7)',
-          scrollTrigger: {
-            trigger: '.foodtruckboss-logo',
-            start: 'top 85%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      );
+      gsap.set('.foodtruckboss-logo', {
+        opacity: 0,
+        rotation: -180,
+        scale: 0.5
+      });
+
+      gsap.to('.foodtruckboss-logo', {
+        opacity: 1,
+        rotation: 0,
+        scale: 1,
+        duration: 1.5,
+        ease: 'back.out(1.7)',
+        delay: 0.5,
+      });
     }, sectionRef);
 
     return () => ctx.revert();
