@@ -71,7 +71,7 @@ const LegalComplianceSection: React.FC = () => {
         'Workers compensation',
         'Equipment protection'
       ],
-      color: 'bg-green-500',
+      color: 'bg-yellow-950',
       urgency: 'High',
       timeframe: '1-2 weeks'
     },

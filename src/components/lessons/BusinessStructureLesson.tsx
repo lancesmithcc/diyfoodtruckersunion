@@ -688,7 +688,7 @@ Tax rates and rules vary significantly between provinces. Consider your primary 
                         {isStepComplete ? (
                           <Link
                             to="/getting-started/niche-targeting"
-                            className="inline-flex items-center px-6 py-3 bg-green-500 text-white font-redhat font-medium rounded-lg hover:bg-green-600 transition-colors duration-200"
+                            className="inline-flex items-center px-6 py-3 bg-yellow-950 text-white font-redhat font-medium rounded-lg hover:bg-green-600 transition-colors duration-200"
                           >
                             Next: Finding Your Niche & Target Market
                             <ArrowRight size={16} className="ml-2" />

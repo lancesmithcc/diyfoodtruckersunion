@@ -55,7 +55,7 @@ const ResourcesSection: React.FC = () => {
       icon: Square,
       title: 'Square Payment Integration',
       description: 'Seamlessly integrated with Square payment system for real-time menu and pricing synchronization',
-      color: 'bg-green-500',
+      color: 'bg-yellow-950',
     },
     {
       icon: Palette,

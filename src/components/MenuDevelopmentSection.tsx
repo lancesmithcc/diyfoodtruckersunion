@@ -55,7 +55,7 @@ const MenuDevelopmentSection: React.FC = () => {
         'Competitive pricing analysis',
         'Menu engineering'
       ],
-      color: 'bg-green-500',
+      color: 'bg-yellow-950',
       difficulty: 'Intermediate'
     },
     {

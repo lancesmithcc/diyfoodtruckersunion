@@ -97,7 +97,7 @@ const MarketingGrowthSection: React.FC = () => {
         'Product line extensions',
         'Market penetration tactics'
       ],
-      color: 'bg-green-500',
+      color: 'bg-yellow-950',
       roi: '200% business growth'
     },
     {

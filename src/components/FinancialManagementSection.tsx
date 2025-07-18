@@ -57,7 +57,7 @@ const FinancialManagementSection: React.FC = () => {
         'Payment terms optimization',
         'Working capital management'
       ],
-      color: 'bg-green-500',
+      color: 'bg-yellow-950',
       difficulty: 'Intermediate',
       lessonPath: '/financial-management/cash-flow'
     },

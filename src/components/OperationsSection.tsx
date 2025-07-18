@@ -57,7 +57,7 @@ const OperationsSection: React.FC = () => {
         'Waste reduction strategies',
         'Cost control methods'
       ],
-      color: 'bg-green-500',
+      color: 'bg-yellow-950',
       timeImpact: 'Reduce waste by 25%',
       lessonPath: '/operations/inventory-management'
     },

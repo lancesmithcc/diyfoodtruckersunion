@@ -439,7 +439,7 @@ const CostBreakdownLesson: React.FC = () => {
                     onClick={() => toggleActionItem(currentStep, item.id)}
                     className={`flex items-center justify-center w-6 h-6 rounded border-2 transition-colors ${
                       item.completed
-                        ? 'bg-green-500 border-green-500'
+                        ? 'bg-yellow-950 border-green-500'
                         : 'border-gray-300 hover:border-green-400'
                     }`}
                   >

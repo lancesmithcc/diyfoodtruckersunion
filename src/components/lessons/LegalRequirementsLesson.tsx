@@ -351,7 +351,7 @@ Budget for ongoing compliance costs including permit renewals, inspection fees, 
               >
                 <div className={`flex-shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center mr-3 ${
                   action.completed
-                    ? 'bg-green-500 border-green-500'
+                    ? 'bg-yellow-950 border-green-500'
                     : 'border-gray-300'
                 }`}>
                   {action.completed && <Check className="w-3 h-3 text-white" />}

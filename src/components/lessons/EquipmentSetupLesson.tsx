@@ -567,7 +567,7 @@ Develop maintenance schedules for all systems and plan for winter storage in Can
                         {isStepComplete ? (
                           <Link
                             to="/getting-started/business-structure"
-                            className="inline-flex items-center px-6 py-3 bg-green-500 text-white font-redhat font-medium rounded-lg hover:bg-green-600 transition-colors duration-200"
+                            className="inline-flex items-center px-6 py-3 bg-yellow-950 text-white font-redhat font-medium rounded-lg hover:bg-green-600 transition-colors duration-200"
                           >
                             Next: Business Structure Selection
                             <ArrowRight size={16} className="ml-2" />

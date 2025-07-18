@@ -46,7 +46,7 @@ const WorkbookPage: React.FC = () => {
       title: 'Financial Management',
       description: 'Take control of your food truck finances with proper bookkeeping, cash flow management, and profit optimization strategies.',
       icon: DollarSign,
-      color: 'bg-green-500',
+      color: 'bg-yellow-950',
       href: '/financial-management',
       lessons: [
         'Bookkeeping Basics',

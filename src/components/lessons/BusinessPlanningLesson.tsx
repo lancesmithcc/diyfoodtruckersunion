@@ -451,7 +451,7 @@ Your business plan should include specific milestones and timelines. Break down 
                         disabled={!isStepComplete}
                         className={`px-6 py-3 rounded-lg font-redhat font-medium transition-all duration-200 ${
                           isStepComplete
-                            ? 'bg-green-500 text-white hover:bg-green-600'
+                            ? 'bg-yellow-950 text-white hover:bg-green-600'
                             : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                         }`}
                       >

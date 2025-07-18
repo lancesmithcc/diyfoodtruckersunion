@@ -55,7 +55,7 @@ const EquipmentSetupSection: React.FC = () => {
         'Used equipment sourcing',
         'Equipment financing options'
       ],
-      color: 'bg-green-500',
+      color: 'bg-yellow-950',
       budgetRange: '$8,000 - $25,000'
     },
     {

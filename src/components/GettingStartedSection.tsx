@@ -44,7 +44,7 @@ const GettingStartedSection: React.FC = () => {
       title: 'Legal Requirements & Permits',
       description: 'Navigate the complex world of food truck regulations, permits, and licenses with our comprehensive state-by-state guides.',
       topics: ['Business Licenses', 'Health Permits', 'Fire Permits', 'Parking Regulations'],
-      color: 'bg-green-500',
+      color: 'bg-yellow-950',
       lessonPath: '/getting-started/legal-requirements'
     },
     {
