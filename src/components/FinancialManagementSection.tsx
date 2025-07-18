@@ -193,7 +193,7 @@ const FinancialManagementSection: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               <div className="text-center p-4 bg-blue-50 rounded-lg">
-                <BookOpen className="h-8 w-8 text-blue-500 mx-auto mb-2" />
+                <BookOpen className="h-8 w-8 text-teal-500 mx-auto mb-2" />
                 <div className="font-caprasimo text-blue-600 mb-1">Bookkeeping</div>
                 <div className="text-sm font-redhat text-gray-600">Daily tracking sheets</div>
               </div>

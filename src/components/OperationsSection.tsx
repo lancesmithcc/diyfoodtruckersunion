@@ -184,7 +184,7 @@ const OperationsSection: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               <div className="text-center p-4 bg-blue-50 rounded-lg">
-                <Clock className="h-8 w-8 text-blue-500 mx-auto mb-2" />
+                <Clock className="h-8 w-8 text-teal-500 mx-auto mb-2" />
                 <div className="font-caprasimo text-blue-600 mb-1">Daily Checklists</div>
                 <div className="text-sm font-redhat text-gray-600">Setup & closing procedures</div>
               </div>
