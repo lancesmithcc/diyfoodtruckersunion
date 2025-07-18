@@ -92,9 +92,9 @@ const ResourcesSection: React.FC = () => {
                 <p className="text-xl opacity-90">Professional Website System for Food Trucks</p>
               </div>
             </div>
-            
+
             <p className="text-lg opacity-95 mb-6 leading-relaxed">
-              The complete website solution designed specifically for food truck operators. Upload your menu photo, 
+              The complete website solution designed specifically for food truck operators. Upload your menu photo,
               let AI do the work, and launch a professional website with Square payment integration - all for free.
             </p>
 
@@ -119,12 +119,12 @@ const ResourcesSection: React.FC = () => {
               </a>
             </div>
           </div>
-          
+
           <div className="p-8">
             <h4 className="text-2xl font-caprasimo text-gray-800 mb-6 text-center">
               Everything You Need to Succeed Online
             </h4>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
               {features.map((feature, index) => (
                 <div key={index} className="text-center p-6 bg-gray-50 rounded-lg hover:shadow-md transition-shadow duration-300">
@@ -179,7 +179,7 @@ const ResourcesSection: React.FC = () => {
           <h3 className="text-2xl font-caprasimo text-gray-800 mb-6 text-center">
             Why Food Truck Boss is Perfect for Your Business
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h4 className="font-caprasimo text-lg text-gray-800 mb-4 flex items-center">
@@ -205,7 +205,7 @@ const ResourcesSection: React.FC = () => {
                 </li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="font-caprasimo text-lg text-gray-800 mb-4 flex items-center">
                 <Github className="h-5 w-5 text-primary-500 mr-2" />
@@ -236,11 +236,11 @@ const ResourcesSection: React.FC = () => {
             <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-6 mb-6">
               <h4 className="font-caprasimo text-lg text-gray-800 mb-2">Start Smart, Not Expensive</h4>
               <p className="font-redhat text-gray-600">
-                Get a professional website with advanced features without the monthly costs. 
+                Get a professional website with advanced features without the monthly costs.
                 Perfect for food truck operators who want to start smart and scale efficiently.
               </p>
             </div>
-            
+
             <a
               href="https://foodtruckboss.app/"
               target="_blank"
