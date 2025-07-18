@@ -15,7 +15,8 @@ const Layout: React.FC = () => {
             <img 
               src="/img/logo.svg" 
               alt="DIY Food Truckers Union" 
-              className="h-40 w-auto mx-auto" 
+              className="w-auto mx-auto" 
+              style={{ height: '320px' }}
             />
           </div>
         </section>
