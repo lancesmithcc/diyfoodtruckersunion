@@ -11,6 +11,7 @@ const ResourcesSection: React.FC = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Animate resource cards
       gsap.fromTo(
         '.resource-card',
         { opacity: 0, y: 50 },
@@ -23,6 +24,28 @@ const ResourcesSection: React.FC = () => {
             trigger: sectionRef.current,
             start: 'top 80%',
             end: 'bottom 20%',
+            toggleActions: 'play none none reverse',
+          },
+        }
+      );
+
+      // Animate FoodTruckBoss logo with fade and rotation
+      gsap.fromTo(
+        '.foodtruckboss-logo',
+        { 
+          opacity: 0, 
+          rotation: -180,
+          scale: 0.5
+        },
+        {
+          opacity: 1,
+          rotation: 0,
+          scale: 1,
+          duration: 1.2,
+          ease: 'back.out(1.7)',
+          scrollTrigger: {
+            trigger: '.foodtruckboss-logo',
+            start: 'top 85%',
             toggleActions: 'play none none reverse',
           },
         }
@@ -102,7 +125,7 @@ const ResourcesSection: React.FC = () => {
               <img
                 src="https://foodtruckdemo.s3.us-east-2.amazonaws.com/branding/logo-1752199357659-foodtruckboss.png"
                 alt="Food Truck Boss Logo"
-                className="h-60 w-60 object-contain mr-6"
+                className="foodtruckboss-logo h-60 w-60 object-contain mr-6"
               />
               <div>
                 <h3 className="text-3xl font-caprasimo mb-2">Food Truck Boss</h3>

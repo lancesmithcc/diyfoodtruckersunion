@@ -138,10 +138,10 @@ const MarketingGrowthSection: React.FC = () => {
                   Expected: {topic.roi}
                 </div>
               </div>
-              
+
               <div className="p-6">
                 <p className="font-redhat text-gray-600 mb-4">{topic.description}</p>
-                
+
                 <div className="mb-6">
                   <h4 className="font-redhat font-medium text-gray-800 mb-3">Key Strategies:</h4>
                   <ul className="space-y-2">
