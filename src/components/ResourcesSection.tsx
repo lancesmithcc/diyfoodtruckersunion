@@ -102,7 +102,7 @@ const ResourcesSection: React.FC = () => {
               <img
                 src="https://foodtruckdemo.s3.us-east-2.amazonaws.com/branding/logo-1752199357659-foodtruckboss.png"
                 alt="Food Truck Boss Logo"
-                className="h-20 w-20 object-contain mr-6"
+                className="h-60 w-60 object-contain mr-6"
               />
               <div>
                 <h3 className="text-3xl font-caprasimo mb-2">Food Truck Boss</h3>
@@ -117,7 +117,7 @@ const ResourcesSection: React.FC = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://foodtruckboss.app/"
+                href="https://www.foodtruckboss.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-primary-600 px-8 py-4 rounded-lg font-redhat font-bold hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center text-lg"

@@ -36,6 +36,20 @@ const DiscordSection: React.FC = () => {
             Connect with likeminded DIY Food Truckers! Share experiences, get advice, and build your network in our supportive community.
           </p>
 
+          {/* Discord Widget */}
+          <div className="mb-12 flex justify-center">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+              <iframe
+                src="https://discord.com/widget?id=1395615339307470999&theme=dark"
+                width="350"
+                height="500"
+                allowTransparency={true}
+                frameBorder="0"
+                className="rounded-lg"
+              />
+            </div>
+          </div>
+
           {/* Join Button */}
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 inline-block">
             <a
@@ -58,7 +72,9 @@ const DiscordSection: React.FC = () => {
               Join Our Discord
             </a>
           </div>
+
         </div>
+
       </div>
     </section>
   );
