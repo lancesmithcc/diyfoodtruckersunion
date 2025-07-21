@@ -136,7 +136,7 @@ const WorkbookPage: React.FC = () => {
                       Start Section {section.number}
                       <ArrowRight size={16} className="ml-2" />
                     </Link>
-                  </div>
+                  </header>
 
                   {/* Section Content */}
                   <div className="p-8 lg:w-2/3">
