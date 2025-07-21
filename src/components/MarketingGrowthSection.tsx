@@ -119,107 +119,109 @@ const MarketingGrowthSection: React.FC = () => {
   return (
     <section ref={sectionRef} id="marketing-growth" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <header className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-caprasimo text-gray-800 mb-6">
             Marketing & <span className="text-primary-500">Growth</span>
           </h2>
           <p className="text-xl font-redhat text-gray-600 max-w-3xl mx-auto">
             Build your brand, attract customers, and scale your food truck business with proven marketing strategies that work on any budget.
           </p>
-        </div>
+        </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {marketingTopics.map((topic, index) => (
-            <div key={index} className="marketing-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-              <div className={`${topic.color} p-6 text-white`}>
-                <topic.icon className="h-12 w-12 mb-4" />
+            <article key={index} className="marketing-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <header className={`${topic.color} p-6 text-white`}>
+                <topic.icon className="h-12 w-12 mb-4" aria-hidden="true" />
                 <h3 className="text-xl font-caprasimo mb-2">{topic.title}</h3>
                 <div className="text-sm opacity-90 font-redhat">
                   Expected: {topic.roi}
                 </div>
-              </div>
+              </header>
 
               <div className="p-6">
                 <p className="font-redhat text-gray-600 mb-4">{topic.description}</p>
 
-                <div className="mb-6">
+                <section className="mb-6">
                   <h4 className="font-redhat font-medium text-gray-800 mb-3">Key Strategies:</h4>
                   <ul className="space-y-2">
                     {topic.strategies.map((strategy, strategyIndex) => (
                       <li key={strategyIndex} className="flex items-start text-sm font-redhat text-gray-700">
-                        <div className="w-2 h-2 bg-primary-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-primary-500 rounded-full mr-3 mt-2 flex-shrink-0" aria-hidden="true"></div>
                         {strategy}
                       </li>
                     ))}
                   </ul>
-                </div>
+                </section>
 
-                <button className="w-full bg-primary-500 text-white py-3 px-4 rounded-lg font-redhat font-medium hover:bg-primary-600 transition-colors duration-200">
-                  Get Started
-                </button>
+                <footer>
+                  <button className="w-full bg-primary-500 text-white py-3 px-4 rounded-lg font-redhat font-medium hover:bg-primary-600 transition-colors duration-200">
+                    Get Started
+                  </button>
+                </footer>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
-        <div className="mt-16 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-lg p-8 border border-primary-200">
-          <div className="text-center mb-8">
+        <aside className="mt-16 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-lg p-8 border border-primary-200">
+          <header className="text-center mb-8">
             <h3 className="text-2xl font-caprasimo text-gray-800 mb-4">Marketing Success Stories</h3>
             <p className="font-redhat text-gray-600 max-w-2xl mx-auto">
               See how other food truck owners have grown their businesses using these proven marketing strategies.
             </p>
-          </div>
+          </header>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div className="bg-white rounded-lg p-6 shadow-md">
-              <div className="text-center mb-4">
-                <div className="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-3">
+          <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <article className="bg-white rounded-lg p-6 shadow-md">
+              <header className="text-center mb-4">
+                <div className="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-3" aria-hidden="true">
                   <span className="text-white font-caprasimo text-xl">M</span>
                 </div>
                 <h4 className="font-caprasimo text-lg text-gray-800">Mike's Tacos</h4>
                 <p className="text-sm font-redhat text-gray-600">Austin, TX</p>
-              </div>
+              </header>
               <blockquote className="text-sm font-redhat text-gray-700 italic text-center">
                 "Using the social media strategies from DIY Food Truckers Union, I grew my Instagram from 200 to 15K followers in 6 months. Sales increased 250%!"
               </blockquote>
-            </div>
+            </article>
 
-            <div className="bg-white rounded-lg p-6 shadow-md">
-              <div className="text-center mb-4">
-                <div className="w-16 h-16 bg-secondary-500 rounded-full flex items-center justify-center mx-auto mb-3">
+            <article className="bg-white rounded-lg p-6 shadow-md">
+              <header className="text-center mb-4">
+                <div className="w-16 h-16 bg-secondary-500 rounded-full flex items-center justify-center mx-auto mb-3" aria-hidden="true">
                   <span className="text-white font-caprasimo text-xl">S</span>
                 </div>
                 <h4 className="font-caprasimo text-lg text-gray-800">Sarah's Burgers</h4>
                 <p className="text-sm font-redhat text-gray-600">Denver, CO</p>
-              </div>
+              </header>
               <blockquote className="text-sm font-redhat text-gray-700 italic text-center">
                 "The event marketing guide helped me book 3 corporate catering contracts worth $25K total. Best investment I ever made!"
               </blockquote>
-            </div>
+            </article>
 
-            <div className="bg-white rounded-lg p-6 shadow-md">
-              <div className="text-center mb-4">
-                <div className="w-16 h-16 bg-accent-500 rounded-full flex items-center justify-center mx-auto mb-3">
+            <article className="bg-white rounded-lg p-6 shadow-md">
+              <header className="text-center mb-4">
+                <div className="w-16 h-16 bg-accent-500 rounded-full flex items-center justify-center mx-auto mb-3" aria-hidden="true">
                   <span className="text-white font-caprasimo text-xl">J</span>
                 </div>
                 <h4 className="font-caprasimo text-lg text-gray-800">Joe's Pizza</h4>
                 <p className="text-sm font-redhat text-gray-600">Miami, FL</p>
-              </div>
+              </header>
               <blockquote className="text-sm font-redhat text-gray-700 italic text-center">
                 "Implemented the loyalty program template and now 70% of my customers are regulars. Revenue is up 180% year-over-year!"
               </blockquote>
-            </div>
-          </div>
+            </article>
+          </section>
 
-          <div className="text-center">
+          <footer className="text-center">
             <button className="bg-primary-500 text-white px-8 py-3 rounded-lg font-redhat font-medium hover:bg-primary-600 transition-colors duration-200 mr-4">
               Download Marketing Kit
             </button>
             <button className="bg-white text-primary-500 px-8 py-3 rounded-lg font-redhat font-medium border-2 border-primary-500 hover:bg-primary-50 transition-colors duration-200">
               Share Your Story
             </button>
-          </div>
-        </div>
+          </footer>
+        </aside>
       </div>
     </section>
   );

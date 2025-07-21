@@ -316,10 +316,10 @@ Your business plan should include specific milestones and timelines. Break down 
     <section ref={sectionRef} id="business-planning-lesson" className="py-20 bg-white">
       <div className="container mx-auto px-4 max-w-4xl">
         {/* Header */}
-        <div className="text-center mb-12 lesson-content">
-          <h1 className="text-4xl md:text-5xl font-caprasimo text-gray-800 mb-6">
+        <header className="text-center mb-12 lesson-content">
+          <h2 className="text-4xl md:text-5xl font-caprasimo text-gray-800 mb-6">
             Business Planning & <span className="text-primary-500">Market Research</span>
-          </h1>
+          </h2>
           <p className="text-xl font-redhat text-gray-600 mb-8">
             Master the fundamentals of food truck business planning with our step-by-step approach. 
             This lesson will guide you through market research, competition analysis, and creating a solid business foundation.
@@ -339,7 +339,7 @@ Your business plan should include specific milestones and timelines. Break down 
           <div className="text-sm font-redhat text-gray-500">
             Step {currentStep + 1} of {lessonSteps.length}
           </div>
-        </div>
+        </header>
 
         {/* Current Step Content */}
         <div className="lesson-content">
@@ -350,7 +350,7 @@ Your business plan should include specific milestones and timelines. Break down 
                   <currentStepData.icon className="h-8 w-8" />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-caprasimo">{currentStepData.title}</h2>
+                  <h3 className="text-2xl font-caprasimo">{currentStepData.title}</h3>
                   <div className="text-sm opacity-90">
                     Step {currentStep + 1} of {lessonSteps.length}
                   </div>
@@ -360,13 +360,13 @@ Your business plan should include specific milestones and timelines. Break down 
             
             <div className="p-8">
               {/* Lesson Content */}
-              <div className="prose prose-lg max-w-none mb-8">
+              <section className="prose prose-lg max-w-none mb-8">
                 {currentStepData.content.split('\n\n').map((paragraph, index) => {
                   if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
                     return (
-                      <h3 key={index} className="text-xl font-caprasimo text-gray-800 mt-6 mb-3">
+                      <h4 key={index} className="text-xl font-caprasimo text-gray-800 mt-6 mb-3">
                         {paragraph.replace(/\*\*/g, '')}
-                      </h3>
+                      </h4>
                     );
                   }
                   return (
@@ -377,31 +377,31 @@ Your business plan should include specific milestones and timelines. Break down 
                     </p>
                   );
                 })}
-              </div>
+              </section>
 
               {/* Pro Tips */}
               {currentStepData.tips && (
-                <div className="bg-accent-50 rounded-lg p-6 mb-8 border border-accent-200">
+                <aside className="bg-accent-50 rounded-lg p-6 mb-8 border border-accent-200">
                   <div className="flex items-center mb-4">
-                    <Lightbulb className="h-5 w-5 text-accent-600 mr-2" />
-                    <h3 className="text-lg font-caprasimo text-accent-800">Pro Tips</h3>
+                    <Lightbulb className="h-5 w-5 text-accent-600 mr-2" aria-hidden="true" />
+                    <h4 className="text-lg font-caprasimo text-accent-800">Pro Tips</h4>
                   </div>
                   <ul className="space-y-2">
                     {currentStepData.tips.map((tip, index) => (
                       <li key={index} className="flex items-start font-redhat text-accent-700">
-                        <div className="w-2 h-2 bg-accent-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-accent-500 rounded-full mr-3 mt-2 flex-shrink-0" aria-hidden="true"></div>
                         {tip}
                       </li>
                     ))}
                   </ul>
-                </div>
+                </aside>
               )}
 
               {/* Action Items */}
-              <div className="bg-primary-50 rounded-lg p-6 border border-primary-200">
-                <h3 className="text-xl font-caprasimo text-primary-800 mb-4">
+              <section className="bg-primary-50 rounded-lg p-6 border border-primary-200">
+                <h4 className="text-xl font-caprasimo text-primary-800 mb-4">
                   Action Items - Complete to Continue
-                </h3>
+                </h4>
                 <div className="space-y-3">
                   {currentStepData.actionItems.map((action, index) => (
                     <div key={index} className="flex items-start">
@@ -460,7 +460,7 @@ Your business plan should include specific milestones and timelines. Break down 
                     )}
                   </div>
                 </div>
-              </div>
+              </section>
             </div>
           </div>
         </div>

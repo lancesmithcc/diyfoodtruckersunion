@@ -1,0 +1,113 @@
+[
+  {
+    "slug": "/",
+    "title": "DIY Food Truckers Union - Start Smart, Not Expensive",
+    "description": "Learn how to start and run a successful food truck business with our comprehensive guides, tools, and community support. Start smart, not expensive.",
+    "keywords": [
+      "food truck business",
+      "food truck startup",
+      "mobile food business",
+      "food truck guide",
+      "food truck entrepreneur"
+    ],
+    "category": "getting-started",
+    "lastUpdated": "2025-01-20T00:00:00.000Z",
+    "author": {
+      "name": "DIY Food Truckers Union",
+      "url": "https://diyfoodtruckersunion.com",
+      "description": "Expert guidance for food truck entrepreneurs"
+    }
+  },
+  {
+    "slug": "/getting-started",
+    "title": "Getting Started with Your Food Truck Business",
+    "description": "Essential first steps for launching your food truck venture. Learn about planning, permits, equipment, and more to start your food truck business successfully.",
+    "keywords": [
+      "food truck startup",
+      "starting food truck business",
+      "food truck planning",
+      "food truck permits",
+      "food truck equipment"
+    ],
+    "category": "getting-started",
+    "difficulty": "beginner",
+    "estimatedReadTime": 15,
+    "lastUpdated": "2025-01-20T00:00:00.000Z"
+  },
+  {
+    "slug": "/operations",
+    "title": "Food Truck Operations & Management",
+    "description": "Master daily operations, staff management, and operational efficiency for your food truck business. Learn best practices for smooth operations.",
+    "keywords": [
+      "food truck operations",
+      "food truck management",
+      "food truck efficiency",
+      "daily operations",
+      "staff management"
+    ],
+    "category": "operations",
+    "difficulty": "intermediate",
+    "estimatedReadTime": 20,
+    "lastUpdated": "2025-01-20T00:00:00.000Z"
+  },
+  {
+    "slug": "/financial-management",
+    "title": "Food Truck Financial Management",
+    "description": "Complete guide to budgeting, accounting, and financial planning for food truck businesses. Learn to manage your finances effectively.",
+    "keywords": [
+      "food truck finances",
+      "food truck budgeting",
+      "food truck accounting",
+      "financial planning",
+      "food truck costs"
+    ],
+    "category": "financial",
+    "difficulty": "intermediate",
+    "estimatedReadTime": 25,
+    "lastUpdated": "2025-01-20T00:00:00.000Z"
+  },
+  {
+    "slug": "/marketing-growth",
+    "title": "Food Truck Marketing & Growth Strategies",
+    "description": "Effective marketing strategies, customer acquisition, and business growth tactics for food truck entrepreneurs.",
+    "keywords": [
+      "food truck marketing",
+      "food truck promotion",
+      "food truck growth",
+      "customer acquisition",
+      "social media marketing"
+    ],
+    "category": "marketing",
+    "difficulty": "intermediate",
+    "estimatedReadTime": 18,
+    "lastUpdated": "2025-01-20T00:00:00.000Z"
+  },
+  {
+    "slug": "/resources",
+    "title": "Food Truck Resources & Tools",
+    "description": "Essential tools, templates, and resources for food truck entrepreneurs. Download free resources to help grow your business.",
+    "keywords": [
+      "food truck resources",
+      "food truck tools",
+      "food truck templates",
+      "business resources",
+      "free downloads"
+    ],
+    "category": "resources",
+    "lastUpdated": "2025-01-20T00:00:00.000Z"
+  },
+  {
+    "slug": "/community",
+    "title": "Food Truck Community & Support",
+    "description": "Connect with other food truck entrepreneurs, get community support, and join our Discord community for ongoing help and networking.",
+    "keywords": [
+      "food truck community",
+      "food truck network",
+      "food truck support",
+      "discord community",
+      "entrepreneur network"
+    ],
+    "category": "community",
+    "lastUpdated": "2025-01-20T00:00:00.000Z"
+  }
+]

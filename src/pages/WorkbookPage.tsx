@@ -72,8 +72,8 @@ const WorkbookPage: React.FC = () => {
       <div className="py-20 bg-white">
         <div className="container mx-auto px-4">
           {/* Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-6">
+          <header className="text-center mb-16">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-6" aria-hidden="true">
               <BookOpen className="w-8 h-8 text-primary-600" />
             </div>
             <h1 className="text-4xl md:text-5xl font-caprasimo text-gray-800 mb-6">
@@ -84,29 +84,29 @@ const WorkbookPage: React.FC = () => {
               Follow our proven 3-section system from concept to profitability.
             </p>
             
-            <div className="bg-primary-50 rounded-lg p-6 max-w-2xl mx-auto border border-primary-200">
-              <h3 className="text-lg font-caprasimo text-primary-800 mb-2">Complete Learning System</h3>
+            <aside className="bg-primary-50 rounded-lg p-6 max-w-2xl mx-auto border border-primary-200">
+              <h2 className="text-lg font-caprasimo text-primary-800 mb-2">Complete Learning System</h2>
               <p className="font-redhat text-primary-700 text-sm">
                 Each section builds on the previous one, creating a comprehensive foundation for food truck success. 
                 Complete all lessons in order for the best learning experience.
               </p>
-            </div>
-          </div>
+            </aside>
+          </header>
 
           {/* Workbook Sections */}
-          <div className="space-y-8">
+          <main className="space-y-8">
             {workbookSections.map((section, index) => (
-              <div key={section.number} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+              <article key={section.number} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
                 <div className="flex flex-col lg:flex-row">
                   {/* Section Header */}
-                  <div className={`${section.color} p-8 text-white lg:w-1/3`}>
+                  <header className={`${section.color} p-8 text-white lg:w-1/3`}>
                     <div className="flex items-center mb-4">
-                      <div className="bg-white bg-opacity-20 p-3 rounded-lg mr-4">
+                      <div className="bg-white bg-opacity-20 p-3 rounded-lg mr-4" aria-hidden="true">
                         <section.icon className="h-8 w-8" />
                       </div>
                       <div>
                         <div className="text-3xl font-caprasimo mb-1">Section {section.number}</div>
-                        <h2 className="text-2xl font-caprasimo">{section.title}</h2>
+                        <h3 className="text-2xl font-caprasimo">{section.title}</h3>
                       </div>
                     </div>
                     
@@ -141,36 +141,36 @@ const WorkbookPage: React.FC = () => {
                   {/* Section Content */}
                   <div className="p-8 lg:w-2/3">
                     <div className="flex items-center justify-between mb-6">
-                      <h3 className="text-xl font-caprasimo text-gray-800">Lesson Overview</h3>
+                      <h4 className="text-xl font-caprasimo text-gray-800">Lesson Overview</h4>
                       <span className={`px-3 py-1 rounded-full text-xs font-medium ${getDifficultyColor(section.difficulty)}`}>
                         {section.difficulty}
                       </span>
                     </div>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <section className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                       {section.lessons.map((lesson, lessonIndex) => (
                         <div key={lessonIndex} className="flex items-start p-3 bg-gray-50 rounded-lg">
-                          <div className="flex items-center justify-center w-6 h-6 bg-primary-500 text-white rounded-full text-xs font-bold mr-3 mt-0.5 flex-shrink-0">
+                          <div className="flex items-center justify-center w-6 h-6 bg-primary-500 text-white rounded-full text-xs font-bold mr-3 mt-0.5 flex-shrink-0" aria-hidden="true">
                             {lessonIndex + 1}
                           </div>
                           <span className="font-redhat text-gray-700 text-sm">{lesson}</span>
                         </div>
                       ))}
-                    </div>
+                    </section>
 
-                    <div className="bg-gray-50 rounded-lg p-4">
-                      <h4 className="font-caprasimo text-gray-800 mb-2">What You'll Learn</h4>
+                    <aside className="bg-gray-50 rounded-lg p-4">
+                      <h5 className="font-caprasimo text-gray-800 mb-2">What You'll Learn</h5>
                       <p className="font-redhat text-gray-600 text-sm">
                         {section.number === '1' && 'Build a solid foundation with market research, legal compliance, budgeting, and strategic planning for your food truck venture.'}
                         {section.number === '2' && 'Master daily operations including workflows, inventory management, staff training, and customer service excellence.'}
                         {section.number === '3' && 'Take control of your finances with bookkeeping, cash flow management, tax planning, and profit optimization strategies.'}
                       </p>
-                    </div>
+                    </aside>
                   </div>
                 </div>
-              </div>
+              </article>
             ))}
-          </div>
+          </main>
 
           {/* Call to Action */}
           <div className="mt-16 text-center">

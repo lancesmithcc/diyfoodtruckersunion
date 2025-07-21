@@ -20,24 +20,26 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section ref={heroRef} className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-50 to-yellow-50 overflow-hidden pt-20">
+    <section ref={heroRef} className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-50 to-yellow-50 overflow-hidden pt-20" role="banner">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5" aria-hidden="true">
         <div className="absolute inset-0 bg-repeat" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23FF6B35' fill-opacity='0.1'%3E%3Cpath d='M20 20h20v20H20z'/%3E%3C/g%3E%3C/svg%3E")`,
         }} />
       </div>
 
       <div className="container mx-auto px-4 text-center relative z-10">
-        <h1 className="hero-title text-5xl md:text-7xl font-caprasimo text-gray-800 mb-6 leading-tight">
-          Start <span className="text-primary-500">Smart.</span>
-        </h1>
-        
-        <p className="hero-subtitle text-xl md:text-2xl font-redhat text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-          Join the DIY Food Truckers Union - a community-driven platform helping aspiring entrepreneurs start their mobile food businesses on a budget. Real advice from real operators.
-        </p>
+        <header>
+          <h1 className="hero-title text-5xl md:text-7xl font-caprasimo text-gray-800 mb-6 leading-tight">
+            Start <span className="text-primary-500">Smart.</span>
+          </h1>
+          
+          <p className="hero-subtitle text-xl md:text-2xl font-redhat text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+            Join the DIY Food Truckers Union - a community-driven platform helping aspiring entrepreneurs start their mobile food businesses on a budget. Real advice from real operators.
+          </p>
+        </header>
 
-        <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center mb-16">
+        <nav className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center mb-16" aria-label="Primary navigation">
           <a href="/workbook/" className="bg-primary-500 text-white px-8 py-4 rounded-lg font-redhat font-semibold hover:bg-primary-600 transition-colors duration-200 flex items-center justify-center group">
             Get Started
             <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-200" size={20} />
@@ -45,34 +47,34 @@ const Hero: React.FC = () => {
           <a href="https://discord.gg/4XNQJ879" className="bg-white text-primary-500 px-8 py-4 rounded-lg font-redhat font-semibold border-2 border-primary-500 hover:bg-primary-50 transition-colors duration-200">
             Join Community
           </a>
-        </div>
+        </nav>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          <div className="hero-stats bg-white p-6 rounded-lg shadow-md">
-            <div className="flex items-center justify-center mb-4">
+        <aside className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto" aria-label="Community statistics">
+          <article className="hero-stats bg-white p-6 rounded-lg shadow-md">
+            <div className="flex items-center justify-center mb-4" aria-hidden="true">
               <Users className="h-8 w-8 text-primary-500" />
             </div>
-            <h3 className="text-3xl font-caprasimo text-gray-800 mb-2">2,500+</h3>
+            <h2 className="text-3xl font-caprasimo text-gray-800 mb-2">2,500+</h2>
             <p className="font-redhat text-gray-600">Community Members</p>
-          </div>
+          </article>
           
-          <div className="hero-stats bg-white p-6 rounded-lg shadow-md">
-            <div className="flex items-center justify-center mb-4">
+          <article className="hero-stats bg-white p-6 rounded-lg shadow-md">
+            <div className="flex items-center justify-center mb-4" aria-hidden="true">
               <DollarSign className="h-8 w-8 text-secondary-500" />
             </div>
-            <h3 className="text-3xl font-caprasimo text-gray-800 mb-2">50+</h3>
+            <h2 className="text-3xl font-caprasimo text-gray-800 mb-2">50+</h2>
             <p className="font-redhat text-gray-600">Free Resources</p>
-          </div>
+          </article>
           
-          <div className="hero-stats bg-white p-6 rounded-lg shadow-md">
-            <div className="flex items-center justify-center mb-4">
+          <article className="hero-stats bg-white p-6 rounded-lg shadow-md">
+            <div className="flex items-center justify-center mb-4" aria-hidden="true">
               <Star className="h-8 w-8 text-accent-500" />
             </div>
-            <h3 className="text-3xl font-caprasimo text-gray-800 mb-2">100+</h3>
+            <h2 className="text-3xl font-caprasimo text-gray-800 mb-2">100+</h2>
             <p className="font-redhat text-gray-600">Success Stories</p>
-          </div>
-        </div>
+          </article>
+        </aside>
       </div>
     </section>
   );

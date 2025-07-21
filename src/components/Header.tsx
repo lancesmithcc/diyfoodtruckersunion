@@ -47,12 +47,12 @@ const Header: React.FC = () => {
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${
       isScrolled ? 'bg-transparent' : 'bg-transparent'
-    }`}>
+    }`} role="banner">
       {/* Navigation Bar */}
       <div className="bg-white px-4 py-4 border-t-[11px] border-t-orange-500">
         <div className="container mx-auto">
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex justify-center space-x-8">
+          <nav className="hidden md:flex justify-center space-x-8" role="navigation" aria-label="Main navigation">
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -60,6 +60,7 @@ const Header: React.FC = () => {
                 className={`text-gray-700 hover:text-primary-500 transition-colors duration-200 font-caprasimo font-medium text-lg ${
                   location.pathname === item.href ? 'text-primary-500' : ''
                 }`}
+                aria-current={location.pathname === item.href ? 'page' : undefined}
               >
                 {item.name}
               </Link>
@@ -71,6 +72,9 @@ const Header: React.FC = () => {
             <button
               className="p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+              aria-label="Toggle navigation menu"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -79,14 +83,14 @@ const Header: React.FC = () => {
       </div>
 
       {/* Awning Scallops */}
-      <div className="flex justify-center overflow-hidden">
+      <div className="flex justify-center overflow-hidden" aria-hidden="true">
         {generateScallops()}
       </div>
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-b">
-          <nav className="py-4">
+        <div className="md:hidden bg-white border-t border-b" id="mobile-menu">
+          <nav className="py-4" role="navigation" aria-label="Mobile navigation">
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -95,6 +99,7 @@ const Header: React.FC = () => {
                   location.pathname === item.href ? 'text-primary-500 bg-gray-50' : ''
                 }`}
                 onClick={() => setIsMenuOpen(false)}
+                aria-current={location.pathname === item.href ? 'page' : undefined}
               >
                 {item.name}
               </Link>
