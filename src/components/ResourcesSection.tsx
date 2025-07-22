@@ -129,7 +129,7 @@ const ResourcesSection: React.FC = () => {
 
             <p className="text-lg opacity-95 mb-6 leading-relaxed">
               The complete website solution designed specifically for food truck operators. Upload your menu photo,
-              let AI do the work, and launch a professional website with Square payment integration - all for free.
+              let AI do the work, and launch a professional website with Square payment integration - this can be setup on netlify and hosted for free (cost will scale with your traffic and usage).
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
