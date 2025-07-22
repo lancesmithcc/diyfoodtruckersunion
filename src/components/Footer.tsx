@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
           {/* Logo and Description */}
           <section className="md:col-span-2">
             <div className="mb-4">
-              <img src="/img/logo.svg" alt="DIY Food Truckers Union" className="h-12 w-auto" />
+              <img src="/img/logo.svg" alt="DIY Food Truckers Union" className="h-24 w-auto" />
             </div>
             <p className="font-redhat text-gray-400 mb-6 max-w-md">
               DIY Food Truckers lifting up DIY Food Truckers since 2025.
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
               <div className="flex items-center">
                 <Mail size={16} className="mr-2" aria-hidden="true" />
                 <a href="mailto:hello@diyfoodtruckersunion.com" className="hover:text-white transition-colors duration-200">
-                  hello@diyfoodtruckersunion.com
+                  hello@diyfoodtruckers.ca
                 </a>
               </div>
             </address>
