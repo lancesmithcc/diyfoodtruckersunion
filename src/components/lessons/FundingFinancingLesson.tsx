@@ -241,7 +241,7 @@ const FundingFinancingLesson: React.FC = () => {
 **Influencer and Partnership Engagement:** Partner with local influencers, food bloggers, and community organizations for campaign support. Partnerships expand reach and provide credibility for campaign messaging.
 
 **Campaign Content and Presentation:**
-**Video Production:** Create compelling campaign videos that tell your story, demonstrate food quality, and explain funding needs. Video content significantly improves campaign performance and supporter engagement.
+**Content Creation:** Create compelling campaign content that tells your story, demonstrates food quality, and explains funding needs. High-quality photos and written content significantly improves campaign performance and supporter engagement.
 
 **Photography and Visual Content:** Develop high-quality photography showcasing food, team, and community connections. Visual content creates emotional connections and demonstrates professionalism.
 
@@ -293,7 +293,7 @@ const FundingFinancingLesson: React.FC = () => {
       ],
       tips: [
         'Start building your community and email list months before launching your crowdfunding campaign',
-        'Invest in quality video and photography - visual content dramatically improves campaign success rates',
+        'Invest in quality photography and content - visual content dramatically improves campaign success rates',
         'Plan for campaign management to be a full-time job during active campaign periods'
       ]
     },

@@ -12,7 +12,19 @@ export const DEFAULT_SEO: SEOConfig = {
     'food truck entrepreneur',
     'food truck operations',
     'food truck marketing',
-    'food truck financing'
+    'food truck financing',
+    'food truck permits',
+    'food truck costs',
+    'food truck equipment',
+    'food truck business plan',
+    'food truck community',
+    'food truck resources',
+    'food truck tips',
+    'food truck success',
+    'food truck profit',
+    'food truck location',
+    'food truck menu',
+    'food truck catering'
   ],
   openGraph: {
     type: 'website',

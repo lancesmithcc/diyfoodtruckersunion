@@ -87,7 +87,7 @@ To democratize food truck entrepreneurship by providing accessible, practical, a
 - Financial tracking tools
 
 ## Future Plans
-- YouTube channel with video tutorials
+- Comprehensive written guides and tutorials
 - Online courses and workshops
 - Regional meetups and events
 - Vendor partnerships and discounts

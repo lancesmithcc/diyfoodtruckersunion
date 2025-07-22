@@ -322,7 +322,7 @@ Canadian food truck markets often emphasize community connection, local sourcing
 **Storytelling Across Channels:**
 **Social Media Narrative:** Use social platforms to share ongoing brand story through behind-the-scenes content, ingredient sourcing, preparation processes, and customer interactions.
 
-**Visual Storytelling:** Use photography, video, and design to communicate brand story without words. Food presentation, truck design, and staff appearance all tell your story.
+**Visual Storytelling:** Use photography, design, and presentation to communicate brand story without words. Food presentation, truck design, and staff appearance all tell your story.
 
 **Customer Testimonials:** Encourage and share customer stories that reinforce your brand positioning and demonstrate authentic customer connections.
 

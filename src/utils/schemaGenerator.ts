@@ -8,7 +8,9 @@ import {
   Person,
   WebSite,
   Question,
-  Answer
+  Answer,
+  LocalBusiness,
+  Service
 } from 'schema-dts';
 import { AuthorData, FAQItem, BreadcrumbItem, ContentTaxonomy } from '../types/seo';
 
@@ -167,7 +169,7 @@ export class SchemaGenerator {
     };
 
     if (data.author) {
-      schema.instructor = {
+      (schema as any).instructor = {
         '@type': 'Person',
         name: data.author.name,
         url: data.author.url,
@@ -277,7 +279,7 @@ export class SchemaGenerator {
     };
 
     if (data.potentialAction) {
-      schema.potentialAction = {
+      (schema as any).potentialAction = {
         '@type': 'SearchAction',
         target: data.potentialAction.target,
         'query-input': data.potentialAction.queryInput
@@ -363,3 +365,141 @@ export const DEFAULT_ORGANIZATION_DATA: OrganizationSchemaData = {
     // Add social media URLs when available
   ]
 };
+
+/**
+ * Generate LocalBusiness schema for local SEO optimization
+ */
+export interface LocalBusinessSchemaData {
+  name: string;
+  url: string;
+  description: string;
+  telephone?: string;
+  email?: string;
+  address?: {
+    streetAddress?: string;
+    addressLocality?: string;
+    addressRegion?: string;
+    postalCode?: string;
+    addressCountry?: string;
+  };
+  geo?: {
+    latitude: number;
+    longitude: number;
+  };
+  openingHours?: string[];
+  priceRange?: string;
+  servesCuisine?: string[];
+  areaServed?: string[];
+}
+
+export function generateLocalBusinessSchema(data: LocalBusinessSchemaData): WithContext<LocalBusiness> {
+  const schema: WithContext<LocalBusiness> = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: data.name,
+    url: data.url,
+    description: data.description
+  };
+
+  if (data.telephone) {
+    schema.telephone = data.telephone;
+  }
+
+  if (data.email) {
+    schema.email = data.email;
+  }
+
+  if (data.address) {
+    schema.address = {
+      '@type': 'PostalAddress',
+      streetAddress: data.address.streetAddress,
+      addressLocality: data.address.addressLocality,
+      addressRegion: data.address.addressRegion,
+      postalCode: data.address.postalCode,
+      addressCountry: data.address.addressCountry || 'US'
+    };
+  }
+
+  if (data.geo) {
+    schema.geo = {
+      '@type': 'GeoCoordinates',
+      latitude: data.geo.latitude,
+      longitude: data.geo.longitude
+    };
+  }
+
+  if (data.openingHours && data.openingHours.length > 0) {
+    schema.openingHours = data.openingHours;
+  }
+
+  if (data.priceRange) {
+    schema.priceRange = data.priceRange;
+  }
+
+  if (data.servesCuisine && data.servesCuisine.length > 0) {
+    (schema as any).servesCuisine = data.servesCuisine;
+  }
+
+  if (data.areaServed && data.areaServed.length > 0) {
+    schema.areaServed = data.areaServed.map(area => ({
+      '@type': 'City',
+      name: area
+    }));
+  }
+
+  return schema;
+}
+
+/**
+ * Generate Service schema for food truck services
+ */
+export interface ServiceSchemaData {
+  name: string;
+  description: string;
+  url: string;
+  provider: OrganizationSchemaData;
+  areaServed?: string[];
+  serviceType?: string[];
+  offers?: {
+    price?: string;
+    priceCurrency?: string;
+    availability?: string;
+  };
+}
+
+export function generateServiceSchema(data: ServiceSchemaData): WithContext<Service> {
+  const schema: WithContext<Service> = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: data.name,
+    description: data.description,
+    url: data.url,
+    provider: {
+      '@type': 'Organization',
+      name: data.provider.name,
+      url: data.provider.url
+    }
+  };
+
+  if (data.areaServed && data.areaServed.length > 0) {
+    schema.areaServed = data.areaServed.map(area => ({
+      '@type': 'City',
+      name: area
+    }));
+  }
+
+  if (data.serviceType && data.serviceType.length > 0) {
+    schema.serviceType = data.serviceType;
+  }
+
+  if (data.offers) {
+    schema.offers = {
+      '@type': 'Offer',
+      price: data.offers.price,
+      priceCurrency: data.offers.priceCurrency || 'USD',
+      availability: (data.offers.availability as any) || 'https://schema.org/InStock'
+    };
+  }
+
+  return schema;
+}

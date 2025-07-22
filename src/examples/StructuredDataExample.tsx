@@ -21,16 +21,28 @@ const ExampleLessonPage: React.FC = () => {
   });
 
   // Optional: Add custom structured data schemas
-  const customSchemas = [
+  const customSchemas: any[] = [
     {
       '@context': 'https://schema.org',
-      '@type': 'VideoObject',
-      name: 'Food Truck Business Planning Video Guide',
-      description: 'Video companion to the business planning lesson',
-      thumbnailUrl: 'https://diyfoodtruckersunion.com/img/video-thumbnail.jpg',
-      uploadDate: '2024-01-20T00:00:00.000Z',
-      duration: 'PT15M',
-      embedUrl: 'https://diyfoodtruckersunion.com/videos/business-planning'
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'How much does it cost to start a food truck business?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Startup costs typically range from $50,000 to $200,000, including the truck, equipment, permits, and initial inventory. Our cost calculator can help you estimate your specific needs.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'What permits do I need for a food truck?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'You\'ll need a business license, food service permit, mobile food vendor permit, and potentially health department approvals. Requirements vary by location.'
+          }
+        }
+      ]
     }
   ];
 

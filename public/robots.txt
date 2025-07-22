@@ -1,12 +1,21 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://diyfoodtruckersunion.com/sitemap.xml
-
-# Block development and test pages
-Disallow: /test/
-Disallow: /_dev/
+# Disallow admin and private areas
 Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
 
-# Crawl delay for politeness
+# Allow important pages
+Allow: /getting-started/
+Allow: /operations/
+Allow: /financial-management/
+Allow: /marketing-growth/
+Allow: /resources/
+Allow: /community/
+
+# Crawl delay (optional)
 Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://diyfoodtruckersunion.com/sitemap.xml
