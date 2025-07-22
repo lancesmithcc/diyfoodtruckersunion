@@ -297,6 +297,7 @@ const ResourcesSection: React.FC = () => {
             <h3 className="text-2xl font-caprasimo text-gray-800 mb-4">Need Help Getting Started?</h3>
             <p className="font-redhat text-gray-600 mb-6 max-w-md">
               Join our Discord community for support with Food Truck Boss setup, customization tips, and networking with other food truck operators.
+                contact <a href="mailto:hello@foodtruckboss.app">hello@foodtruckboss.app</a> for more information and help getting started.
             </p>
             <a
               href="https://discord.gg/4XNQJ879"
