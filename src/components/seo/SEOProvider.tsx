@@ -1,17 +1,19 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { SEOConfig } from '../../types/seo';
+import { SEOConfig, LLMContextData } from '../../types/seo';
+import { LLMOptimizer } from '../../utils/llmOptimization';
 
 interface SEOProviderProps {
   config: SEOConfig;
   children?: React.ReactNode;
+  llmContext?: LLMContextData;
 }
 
 /**
  * Centralized SEO provider component that manages meta tags, Open Graph data,
  * Twitter Cards, and structured data for all pages
  */
-export const SEOProvider: React.FC<SEOProviderProps> = ({ config, children }) => {
+export const SEOProvider: React.FC<SEOProviderProps> = ({ config, children, llmContext }) => {
   const {
     title,
     description,
@@ -79,6 +81,64 @@ export const SEOProvider: React.FC<SEOProviderProps> = ({ config, children }) =>
             }}
           />
         ))}
+        
+        {/* LLM Context Data */}
+        {llmContext && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'CreativeWork',
+                name: title,
+                description: description,
+                author: {
+                  '@type': 'Organization',
+                  name: 'DIY Food Truckers Union',
+                  url: 'https://diyfoodtruckersunion.com'
+                },
+                audience: {
+                  '@type': 'Audience',
+                  audienceType: llmContext.expertiseLevel,
+                  educationalLevel: llmContext.expertiseLevel
+                },
+                learningResourceType: 'Guide',
+                educationalUse: 'Self-Study',
+                inLanguage: 'en-US',
+                isAccessibleForFree: true,
+                keywords: keywords.join(', '),
+                // LLM-specific context
+                additionalProperty: [
+                  {
+                    '@type': 'PropertyValue',
+                    name: 'pageContext',
+                    value: llmContext.pageContext
+                  },
+                  {
+                    '@type': 'PropertyValue',
+                    name: 'keyInsights',
+                    value: llmContext.keyInsights.join('; ')
+                  },
+                  {
+                    '@type': 'PropertyValue',
+                    name: 'actionableAdvice',
+                    value: llmContext.actionableAdvice.join('; ')
+                  },
+                  {
+                    '@type': 'PropertyValue',
+                    name: 'relatedConcepts',
+                    value: llmContext.relatedConcepts.join(', ')
+                  },
+                  {
+                    '@type': 'PropertyValue',
+                    name: 'authoritySignals',
+                    value: llmContext.authoritySignals.join('; ')
+                  }
+                ]
+              })
+            }}
+          />
+        )}
       </Helmet>
       {children}
     </>

@@ -10,7 +10,11 @@ import {
   Question,
   Answer,
   LocalBusiness,
-  Service
+  Service,
+  CreativeWork,
+  LearningResource,
+  HowTo,
+  ItemList
 } from 'schema-dts';
 import { AuthorData, FAQItem, BreadcrumbItem, ContentTaxonomy } from '../types/seo';
 
@@ -365,6 +369,180 @@ export const DEFAULT_ORGANIZATION_DATA: OrganizationSchemaData = {
     // Add social media URLs when available
   ]
 };
+
+/**
+ * Generate LearningResource schema for educational content
+ */
+export interface LearningResourceSchemaData {
+  name: string;
+  description: string;
+  url: string;
+  author: AuthorData;
+  educationalLevel?: 'beginner' | 'intermediate' | 'advanced';
+  learningResourceType?: string;
+  teaches?: string[];
+  educationalUse?: string;
+  timeRequired?: string;
+  inLanguage?: string;
+  isAccessibleForFree?: boolean;
+  keywords?: string[];
+}
+
+export function generateLearningResourceSchema(data: LearningResourceSchemaData): WithContext<LearningResource> {
+  const schema: WithContext<LearningResource> = {
+    '@context': 'https://schema.org',
+    '@type': 'LearningResource',
+    name: data.name,
+    description: data.description,
+    url: data.url,
+    author: {
+      '@type': 'Person',
+      name: data.author.name,
+      url: data.author.url,
+      description: data.author.description
+    }
+  };
+
+  if (data.educationalLevel) {
+    schema.educationalLevel = data.educationalLevel;
+  }
+
+  if (data.learningResourceType) {
+    schema.learningResourceType = data.learningResourceType;
+  }
+
+  if (data.teaches && data.teaches.length > 0) {
+    schema.teaches = data.teaches;
+  }
+
+  if (data.educationalUse) {
+    schema.educationalUse = data.educationalUse;
+  }
+
+  if (data.timeRequired) {
+    schema.timeRequired = data.timeRequired;
+  }
+
+  if (data.inLanguage) {
+    schema.inLanguage = data.inLanguage;
+  }
+
+  if (data.isAccessibleForFree !== undefined) {
+    schema.isAccessibleForFree = data.isAccessibleForFree;
+  }
+
+  if (data.keywords && data.keywords.length > 0) {
+    schema.keywords = data.keywords.join(', ');
+  }
+
+  return schema;
+}
+
+/**
+ * Generate HowTo schema for step-by-step instructions
+ */
+export interface HowToSchemaData {
+  name: string;
+  description: string;
+  url: string;
+  author: AuthorData;
+  totalTime?: string;
+  estimatedCost?: string;
+  supplies?: string[];
+  tools?: string[];
+  steps: {
+    name: string;
+    text: string;
+    url?: string;
+    image?: string;
+  }[];
+}
+
+export function generateHowToSchema(data: HowToSchemaData): WithContext<HowTo> {
+  const schema: WithContext<HowTo> = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: data.name,
+    description: data.description,
+    url: data.url,
+    author: {
+      '@type': 'Person',
+      name: data.author.name,
+      url: data.author.url,
+      description: data.author.description
+    },
+    step: data.steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+      url: step.url,
+      image: step.image
+    }))
+  };
+
+  if (data.totalTime) {
+    schema.totalTime = data.totalTime;
+  }
+
+  if (data.estimatedCost) {
+    schema.estimatedCost = {
+      '@type': 'MonetaryAmount',
+      value: data.estimatedCost,
+      currency: 'USD'
+    };
+  }
+
+  if (data.supplies && data.supplies.length > 0) {
+    schema.supply = data.supplies.map(supply => ({
+      '@type': 'HowToSupply',
+      name: supply
+    }));
+  }
+
+  if (data.tools && data.tools.length > 0) {
+    schema.tool = data.tools.map(tool => ({
+      '@type': 'HowToTool',
+      name: tool
+    }));
+  }
+
+  return schema;
+}
+
+/**
+ * Generate ItemList schema for structured content lists
+ */
+export interface ItemListSchemaData {
+  name: string;
+  description: string;
+  url: string;
+  itemListElement: {
+    name: string;
+    description?: string;
+    url?: string;
+    position: number;
+  }[];
+}
+
+export function generateItemListSchema(data: ItemListSchemaData): WithContext<ItemList> {
+  const schema: WithContext<ItemList> = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: data.name,
+    description: data.description,
+    url: data.url,
+    itemListElement: data.itemListElement.map(item => ({
+      '@type': 'ListItem',
+      position: item.position,
+      name: item.name,
+      description: item.description,
+      url: item.url
+    }))
+  };
+
+  return schema;
+}
 
 /**
  * Generate LocalBusiness schema for local SEO optimization
