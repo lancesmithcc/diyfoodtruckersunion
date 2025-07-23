@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { useAnalyticsContext } from './analytics/AnalyticsProvider';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const { trackNavigation, isEnabled } = useAnalyticsContext();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,6 +63,7 @@ const Header: React.FC = () => {
                   location.pathname === item.href ? 'text-primary-500' : ''
                 }`}
                 aria-current={location.pathname === item.href ? 'page' : undefined}
+                onClick={() => isEnabled && trackNavigation(`header_nav_${item.name.toLowerCase()}`)}
               >
                 {item.name}
               </Link>
@@ -98,7 +101,10 @@ const Header: React.FC = () => {
                 className={`block px-4 py-3 text-gray-700 hover:text-primary-500 hover:bg-gray-50 transition-colors duration-200 font-redhat font-medium text-center ${
                   location.pathname === item.href ? 'text-primary-500 bg-gray-50' : ''
                 }`}
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  isEnabled && trackNavigation(`mobile_nav_${item.name.toLowerCase()}`);
+                }}
                 aria-current={location.pathname === item.href ? 'page' : undefined}
               >
                 {item.name}

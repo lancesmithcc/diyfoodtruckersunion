@@ -12,7 +12,7 @@ const ExampleLessonPage: React.FC = () => {
     slug: '/lessons/business-planning-fundamentals',
     author: {
       name: 'DIY Food Truckers Union',
-      url: 'https://diyfoodtruckersunion.com'
+      url: 'https://diyfoodtruckers.ca'
     },
     difficulty: 'beginner',
     estimatedReadTime: 25,

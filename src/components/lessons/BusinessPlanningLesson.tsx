@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Target, Users, TrendingUp, MapPin, DollarSign, FileText, CheckCircle, ArrowRight, Lightbulb } from 'lucide-react';
+import { useLessonAnalytics } from '../../hooks/useLessonAnalytics';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,6 +10,14 @@ const BusinessPlanningLesson: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [currentStep, setCurrentStep] = useState(0);
   const [completedActions, setCompletedActions] = useState<{ [key: number]: boolean[] }>({});
+  
+  // Analytics tracking for this lesson
+  const { trackSectionView, trackActionComplete } = useLessonAnalytics({
+    id: 'business-planning',
+    title: 'Business Planning & Market Research',
+    category: 'getting-started',
+    difficulty: 'beginner'
+  });
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -34,6 +43,8 @@ const BusinessPlanningLesson: React.FC = () => {
   }, [currentStep]);
 
   const toggleActionItem = (stepIndex: number, actionIndex: number) => {
+    const wasCompleted = completedActions[stepIndex]?.[actionIndex];
+    
     setCompletedActions(prev => ({
       ...prev,
       [stepIndex]: {
@@ -41,6 +52,13 @@ const BusinessPlanningLesson: React.FC = () => {
         [actionIndex]: !prev[stepIndex]?.[actionIndex]
       }
     }));
+
+    // Track action completion
+    if (!wasCompleted) {
+      const stepTitle = lessonSteps[stepIndex]?.title || `Step ${stepIndex + 1}`;
+      const actionText = lessonSteps[stepIndex]?.actionItems[actionIndex] || `Action ${actionIndex + 1}`;
+      trackActionComplete(`step${stepIndex + 1}_action${actionIndex + 1}`);
+    }
   };
 
   const getCompletedCount = (stepIndex: number) => {
@@ -435,7 +453,12 @@ Your business plan should include specific milestones and timelines. Break down 
                     </div>
                     {currentStep < lessonSteps.length - 1 ? (
                       <button
-                        onClick={() => setCurrentStep(currentStep + 1)}
+                        onClick={() => {
+                          const currentStepTitle = lessonSteps[currentStep]?.title || `Step ${currentStep + 1}`;
+                          // Track section completion in analytics
+                          trackSectionView(`step_${currentStep + 1}_complete`);
+                          setCurrentStep(currentStep + 1);
+                        }}
                         disabled={!isStepComplete}
                         className={`px-6 py-3 rounded-lg font-redhat font-medium transition-all duration-200 flex items-center ${
                           isStepComplete

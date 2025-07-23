@@ -1,7 +1,9 @@
 import React from 'react';
 import { Mail, MessageCircle } from 'lucide-react';
+import { useAnalyticsContext } from './analytics/AnalyticsProvider';
 
 const Footer: React.FC = () => {
+  const { trackNavigation, trackEvent, EventCategory, EventAction, isEnabled } = useAnalyticsContext();
   return (
     <footer className="bg-gray-900 text-white py-16" role="contentinfo">
       <div className="container mx-auto px-4">
@@ -15,7 +17,14 @@ const Footer: React.FC = () => {
               DIY Food Truckers lifting up DIY Food Truckers since 2025.
             </p>
             <div className="flex space-x-4">
-              <a href="https://discord.gg/4XNQJ879" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-200" aria-label="Join our Discord community">
+              <a 
+                href="https://discord.gg/4XNQJ879" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-400 hover:text-white transition-colors duration-200" 
+                aria-label="Join our Discord community"
+                onClick={() => isEnabled && trackEvent(EventAction.CLICK, EventCategory.COMMUNITY, 'discord_icon')}
+              >
                 <MessageCircle size={24} />
               </a>
             </div>
@@ -25,9 +34,33 @@ const Footer: React.FC = () => {
           <nav aria-labelledby="footer-links">
             <h3 id="footer-links" className="text-lg font-caprasimo mb-4">Quick Links</h3>
             <ul className="space-y-2 font-redhat text-gray-400">
-              <li><a href="/workbook/" className="hover:text-white transition-colors duration-200">DIY Workbook</a></li>
-              <li><a href="/resources/" className="hover:text-white transition-colors duration-200">Resources</a></li>
-              <li><a href="https://discord.gg/4XNQJ879" className="hover:text-white transition-colors duration-200">Discord Community</a></li>
+              <li>
+                <a 
+                  href="/workbook/" 
+                  className="hover:text-white transition-colors duration-200"
+                  onClick={() => isEnabled && trackNavigation('footer_workbook')}
+                >
+                  DIY Workbook
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/resources/" 
+                  className="hover:text-white transition-colors duration-200"
+                  onClick={() => isEnabled && trackNavigation('footer_resources')}
+                >
+                  Resources
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://discord.gg/4XNQJ879" 
+                  className="hover:text-white transition-colors duration-200"
+                  onClick={() => isEnabled && trackEvent(EventAction.CLICK, EventCategory.COMMUNITY, 'footer_discord')}
+                >
+                  Discord Community
+                </a>
+              </li>
             </ul>
           </nav>
 
@@ -37,7 +70,11 @@ const Footer: React.FC = () => {
             <address className="space-y-3 font-redhat text-gray-400 not-italic">
               <div className="flex items-center">
                 <Mail size={16} className="mr-2" aria-hidden="true" />
-                <a href="mailto:hello@diyfoodtruckersunion.com" className="hover:text-white transition-colors duration-200">
+                <a 
+                  href="mailto:hello@diyfoodtruckersunion.com" 
+                  className="hover:text-white transition-colors duration-200"
+                  onClick={() => isEnabled && trackEvent(EventAction.CLICK, EventCategory.ENGAGEMENT, 'email_contact')}
+                >
                   hello@diyfoodtruckers.ca
                 </a>
               </div>
